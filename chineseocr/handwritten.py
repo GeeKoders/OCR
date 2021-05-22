@@ -1,3 +1,4 @@
+# coding=utf-8
 from tensorflow.keras.models import load_model
 from preprocessing import img_preprocessing, img_reshape
 import os
@@ -30,7 +31,10 @@ def showResult(prediction, top = args['top']):
     jsonData = json.dumps(dict, ensure_ascii=False).encode('utf8')
     return jsonData.decode()
 
-
+# AWS ubuntu
+# TestingDataPath = os.path.join(os.getcwd(),'images/testing-data')
+# ModelPath = os.path.join(os.getcwd(), 'models')
+# Google colab
 TestingDataPath = '/content/chineseocr/images/testing-data'
 ModelPath = '/content/chineseocr/models'
 LabelNames = '拈拉拋拌拍拎拐拒拓拔拖拗拘拙拚招放斧於旺昀昂昆昌明昏易昔朋服'
