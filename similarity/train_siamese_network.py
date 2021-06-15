@@ -1,3 +1,4 @@
+import os
 import cv2
 import config
 import utils
@@ -42,5 +43,6 @@ te_acc = siamese_network.compute_accuracy(te_y, y_pred)
 print('* Accuracy on training set: %0.2f%%' % (100 * tr_acc))
 print('* Accuracy on test set: %0.2f%%' % (100 * te_acc))
 
-model.save(config.MODEL_PATH)
+#model.save(config.MODEL_PATH)
+model.save(os.path.join(config.MODEL_PATH, config.MODEL_NAME))
 utils.plot_training(history, config.PLOT_PATH)
